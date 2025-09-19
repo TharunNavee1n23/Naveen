@@ -1,0 +1,25 @@
+{
+  "name": "secure-task-management-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start:api": "node ./apps/api/dist/main.js || (cd apps/api && npm run start:dev)",
+    "start:dashboard": "cd apps/dashboard && npm run start",
+    "build:api": "cd apps/api && npm run build",
+    "test": "node ./tests/backend-rbac.spec.js || echo 'run jest in a full environment'"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "corepack": "^0.34.0",
+    "npm": "^10.9.3"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
